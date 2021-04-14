@@ -3086,5 +3086,79 @@ namespace test
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspUpdatePetImages", petImageID, primary_imgParameter, imgParameter, file_nameParameter, image_sizeParameter);
         }
+    
+        public virtual int uspAddUserEmployee(string strFirstName, string strLastName, Nullable<int> intJobTitleID)
+        {
+            var strFirstNameParameter = strFirstName != null ?
+                new ObjectParameter("strFirstName", strFirstName) :
+                new ObjectParameter("strFirstName", typeof(string));
+    
+            var strLastNameParameter = strLastName != null ?
+                new ObjectParameter("strLastName", strLastName) :
+                new ObjectParameter("strLastName", typeof(string));
+    
+            var intJobTitleIDParameter = intJobTitleID.HasValue ?
+                new ObjectParameter("intJobTitleID", intJobTitleID) :
+                new ObjectParameter("intJobTitleID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspAddUserEmployee", strFirstNameParameter, strLastNameParameter, intJobTitleIDParameter);
+        }
+    
+        public virtual int uspAddUserOwner(ObjectParameter strUserName, ObjectParameter strPassword, ObjectParameter intRoleID, ObjectParameter intOwnerID, string strFirstName, string strLastName, Nullable<int> intGenderID, string strAddress, string strCity, Nullable<int> intStateID, string strZip, string strPhoneNumber, string strEmail, string strOwner2Name, string strOwner2PhoneNumber, string strOwner2Email, string strNotes)
+        {
+            var strFirstNameParameter = strFirstName != null ?
+                new ObjectParameter("strFirstName", strFirstName) :
+                new ObjectParameter("strFirstName", typeof(string));
+    
+            var strLastNameParameter = strLastName != null ?
+                new ObjectParameter("strLastName", strLastName) :
+                new ObjectParameter("strLastName", typeof(string));
+    
+            var intGenderIDParameter = intGenderID.HasValue ?
+                new ObjectParameter("intGenderID", intGenderID) :
+                new ObjectParameter("intGenderID", typeof(int));
+    
+            var strAddressParameter = strAddress != null ?
+                new ObjectParameter("strAddress", strAddress) :
+                new ObjectParameter("strAddress", typeof(string));
+    
+            var strCityParameter = strCity != null ?
+                new ObjectParameter("strCity", strCity) :
+                new ObjectParameter("strCity", typeof(string));
+    
+            var intStateIDParameter = intStateID.HasValue ?
+                new ObjectParameter("intStateID", intStateID) :
+                new ObjectParameter("intStateID", typeof(int));
+    
+            var strZipParameter = strZip != null ?
+                new ObjectParameter("strZip", strZip) :
+                new ObjectParameter("strZip", typeof(string));
+    
+            var strPhoneNumberParameter = strPhoneNumber != null ?
+                new ObjectParameter("strPhoneNumber", strPhoneNumber) :
+                new ObjectParameter("strPhoneNumber", typeof(string));
+    
+            var strEmailParameter = strEmail != null ?
+                new ObjectParameter("strEmail", strEmail) :
+                new ObjectParameter("strEmail", typeof(string));
+    
+            var strOwner2NameParameter = strOwner2Name != null ?
+                new ObjectParameter("strOwner2Name", strOwner2Name) :
+                new ObjectParameter("strOwner2Name", typeof(string));
+    
+            var strOwner2PhoneNumberParameter = strOwner2PhoneNumber != null ?
+                new ObjectParameter("strOwner2PhoneNumber", strOwner2PhoneNumber) :
+                new ObjectParameter("strOwner2PhoneNumber", typeof(string));
+    
+            var strOwner2EmailParameter = strOwner2Email != null ?
+                new ObjectParameter("strOwner2Email", strOwner2Email) :
+                new ObjectParameter("strOwner2Email", typeof(string));
+    
+            var strNotesParameter = strNotes != null ?
+                new ObjectParameter("strNotes", strNotes) :
+                new ObjectParameter("strNotes", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspAddUserOwner", strUserName, strPassword, intRoleID, intOwnerID, strFirstNameParameter, strLastNameParameter, intGenderIDParameter, strAddressParameter, strCityParameter, intStateIDParameter, strZipParameter, strPhoneNumberParameter, strEmailParameter, strOwner2NameParameter, strOwner2PhoneNumberParameter, strOwner2EmailParameter, strNotesParameter);
+        }
     }
 }
